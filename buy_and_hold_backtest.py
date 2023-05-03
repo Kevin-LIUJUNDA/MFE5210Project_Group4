@@ -13,8 +13,8 @@ pricetick = 1
 margin_rate = 0.19
 commission_rate = 0.00005
 contract = ContractData(symbol, exchange, size, pricetick, margin_rate, commission_rate)
-start_date = datetime(2023,1,3,9,0,0)
-end_date = datetime(2023,1,3,9,0,5)
+start_date = datetime(2023,1,6,9,0,0)
+end_date = datetime(2023,1,6,9,0,5)
 slippage = 0
 
 event_engine = EventEngine()
