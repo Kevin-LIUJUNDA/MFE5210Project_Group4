@@ -6,6 +6,7 @@ from .event import EventEngine, Event
 from datastructure.object import TickData, SignalData, BarData, OrderData, TradeData, ContractData, SubscribeRequest
 from datastructure.constant import Exchange
 from strategy.buy_and_hold_strategy import BuyAndHoldStrategy
+from strategy.DoubleMaStrategy import DoubleMaStrategy
 from oms.omsEngine import OmsEngine
 from exchange.simExchange import SimExchange
 from datastructure.definition import EVENT_TICK
@@ -39,7 +40,7 @@ class BacktestEngine(BaseEngine):
         # 回测系统组件
         
         self.sim_exchange = SimExchange(self.event_engine, start, end, contract)
-        self.strategy = BuyAndHoldStrategy(self.event_engine)
+        self.strategy = DoubleMaStrategy(self.event_engine)
         self.oms = OmsEngine(self.event_engine, contract)
 
         # contractdata
