@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+from typing import Callable, Dict, Optional
 from core.event import Event, EventEngine
 from datastructure.object import OrderData, OrderRequest, LogData, TradeData
 from core.engine import BaseEngine
