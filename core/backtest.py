@@ -65,7 +65,11 @@ class BacktestEngine(BaseEngine):
                 self.event_engine.stop()
                 break
         
-        print(self.sim_exchange.calculate_results())
+        result = self.sim_exchange.calculate_results()
+        try:
+            result.to_csv('result.csv')
+        except:
+            print(result)
         
 
 
