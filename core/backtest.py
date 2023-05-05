@@ -40,7 +40,7 @@ class BacktestEngine(BaseEngine):
         # 回测系统组件
         
         self.sim_exchange = SimExchange(self.event_engine, start, end, contract)
-        self.strategy = DoubleMaStrategy(self.event_engine)
+        self.strategy = BuyAndHoldStrategy(self.event_engine)
         self.oms = OmsEngine(self.event_engine, contract)
 
         # contractdata
