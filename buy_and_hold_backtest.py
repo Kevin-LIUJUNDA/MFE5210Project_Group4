@@ -6,18 +6,16 @@ from datastructure.constant import Exchange
 from datastructure.object import TickData, ContractData
 from core.backtest import BacktestEngine
 
-symbol = 'rb2305'
-exchange = Exchange('SHFE')
-size = 10
-pricetick = 1
-margin_rate = 0.19
-commission_rate = 0.00005
-contract = ContractData(symbol, exchange, size, pricetick, margin_rate, commission_rate)
-start_date = datetime(2023,1,6,9,0,0)
-end_date = datetime(2023,1,6,9,0,5)
-slippage = 0
+def running(symbol, start_date, end_date):
+    exchange = Exchange('SHFE')
+    size = 10
+    pricetick = 1
+    margin_rate = 0.19
+    commission_rate = 0.00005
+    contract = ContractData(symbol, exchange, size, pricetick, margin_rate, commission_rate)
+    slippage = 0
 
-event_engine = EventEngine()
-backtest = BacktestEngine(event_engine, start_date, end_date, contract, slippage)
+    event_engine = EventEngine()
+    backtest = BacktestEngine(event_engine, start_date, end_date, contract, slippage)
 
-backtest.run_backtest()
+    backtest.run_backtest()
