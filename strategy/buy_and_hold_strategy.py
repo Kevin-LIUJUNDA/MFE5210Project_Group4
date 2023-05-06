@@ -36,11 +36,11 @@ class BuyAndHoldStrategy(StrategyTemplate):
         
         tick: TickData = event.data
 
-        if (tick.datetime >= datetime(2023,1,3,9,0,0)) & (tick.datetime < datetime(2023,1,3,9,0,3)):
+        if (tick.datetime >= datetime(2023,1,6,9,0,0)) & (tick.datetime < datetime(2023,1,6,9,0,3)):
             signal: SignalData = SignalData(tick.datetime, Direction.LONG)
             self.on_signal(signal)
             self.output('策略产生多信号')
-        if tick.datetime >= datetime(2023,1,3,9,0,3):
+        if tick.datetime >= datetime(2023,1,6,9,0,3):
             signal: SignalData = SignalData(tick.datetime, Direction.SHORT)
             self.on_signal(signal)
             self.output('策略产生空信号')
