@@ -19,7 +19,7 @@ class WorkerThread(QThread):
     def run(self):
         # 'rb2305'
         # '2023-01-06 09:00:00'
-        # '2023-01-06 09:01:00'
+        # '2023-01-06 09:00:20'
         running(self.symbol, datetime.datetime.strptime(self.s_t, '%Y-%m-%d %H:%M:%S'), \
                 datetime.datetime.strptime(self.e_t, '%Y-%m-%d %H:%M:%S'))
 
@@ -37,7 +37,7 @@ class MyWidget(QWidget):
         layout = QVBoxLayout()
         self.setLayout(layout)
 
-        self.mylabel = QLabel('e.g.\nrb2305\n2023-01-06 09:00:00\n2023-01-06 09:01:00', self)
+        self.mylabel = QLabel('e.g.\nrb2305\n2023-01-06 09:00:00\n2023-01-06 09:00:20', self)
         layout.addWidget(self.mylabel)
 
         self.mybutton = QPushButton('start', self)
