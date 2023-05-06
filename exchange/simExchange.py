@@ -271,7 +271,10 @@ class SimExchange:
 
     
     def output(self, msg) -> None:
-        print(f"{datetime.now()} simExchange: {msg}" )
+        info = f"{datetime.now()} simExchange: {msg}" 
+        print(info)
+        with open('log.txt', 'a+', encoding='utf-8') as f:
+            f.write(info +'\n')   #加\n换行显示
 
 
 
